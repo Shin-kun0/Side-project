@@ -1,151 +1,158 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
     <title>Project Site</title>
-<style>
-body {
-    background-color: rgb(76, 119, 199);
-    font-family: Arial, sans-serif;
-    margin-left: 0px;
-    margin-top: 0px;
-    }
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #4672a5, #9389a5);
-    z-index: -2;
-}
+    <style>
+        body {
+            background-color: rgb(76, 119, 199);
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
 
-.neon-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -2;
-}
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-.line {
-    position: absolute;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(77, 31, 115, 0.8));
-    border-radius: 2px;
-    animation: moveDiagonal 6s linear infinite;
-    transform: rotate(45deg);
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-.line:nth-child(1) {
-    width: 2px;
-    height: 150%;
-    top: -30%;
-    left: 30%;
-    animation-delay: 0s;
-    animation-name: moveDiagonalReverse;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
 
-.line:nth-child(2) {
-    width: 2px;
-    height: 150%;
-    top: -30%;
-    left: 50%;
-    animation-delay: 1.5s;
-}
+        .clock {
+            background-color: aliceblue;
+            padding: 5px 10px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px black;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
 
-.line:nth-child(3) {
-    width: 2px;
-    height: 150%;
-    top: -30%;
-    left: 70%;
-    animation-delay: 3s;
-    animation-name: moveDiagonalReverse;
-}
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4672a5, #9389a5);
+            z-index: -2;
+        }
 
-.line:nth-child(4) {
-    width: 2px;
-    height: 150%;
-    top: -30%;
-    left: 90%;
-    animation-delay: 4.5s;
-}
+        .neon-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
 
-@keyframes moveDiagonal {
-0% {transform: rotate(45deg) translateY(-150%);
-}
-50% {transform: rotate(45deg) translateY(150%);
-}
-100% {transform: rotate(45deg) translateY(-150%);
-}
-}
+        .line {
+            position: absolute;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(77, 31, 115, 0.8));
+            border-radius: 2px;
+            animation: moveDiagonal 6s linear infinite;
+            transform: rotate(45deg);
+        }
 
-@keyframes moveDiagonalReverse {
-0% {transform: rotate(45deg) translateY(150%);
-}
-50% {transform: rotate(45deg) translateY(-150%);
-}
-100% {transform: rotate(45deg) translateY(150%); 
-}
-}
-.pic {
-    width: 370px;
-    height: 320px;
-    margin-left: -4;
-}
+        .line:nth-child(1) {
+            width: 2px;
+            height: 150%;
+            top: -30%;
+            left: 30%;
+            animation-delay: 0s;
+            animation-name: moveDiagonalReverse;
+        }
 
-.clock {
-    background-color: aliceblue;
-    display: inline-block;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px black;
-}
+        .line:nth-child(2) {
+            width: 2px;
+            height: 150%;
+            top: -30%;
+            left: 50%;
+            animation-delay: 1.5s;
+        }
 
-#time {
-    font-size: 48px; 
-    font-weight: bold; 
-    color: #333;
-}
+        .line:nth-child(3) {
+            width: 2px;
+            height: 150%;
+            top: -30%;
+            left: 70%;
+            animation-delay: 3s;
+            animation-name: moveDiagonalReverse;
+        }
 
-.par {
-    font-family: italic;
-    font-size: 28px;
-    color: white;
-    display: inline-block;
-}
-</style>
+        .line:nth-child(4) {
+            width: 2px;
+            height: 150%;
+            top: -30%;
+            left: 90%;
+            animation-delay: 4.5s;
+        }
+
+        @keyframes moveDiagonal {
+            0% {
+                transform: rotate(45deg) translateY(-150%);
+            }
+            50% {
+                transform: rotate(45deg) translateY(150%);
+            }
+            100% {
+                transform: rotate(45deg) translateY(-150%);
+            }
+        }
+
+        @keyframes moveDiagonalReverse {
+            0% {
+                transform: rotate(45deg) translateY(150%);
+            }
+            50% {
+                transform: rotate(45deg) translateY(-150%);
+            }
+            100% {
+                transform: rotate(45deg) translateY(150%);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="background"></div>
-<div class="neon-lines">
+    <div class="neon-lines">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
-</div>
+    </div>
 
-<img class="pic" src="https://media.licdn.com/dms/image/v2/D4D03AQGbbeQaJYtGlw/profile-displayphoto-shrink_400_400/B4DZPgZvmpHYAk-/0/1734636666378?e=1743033600&v=beta&t=r48eTz3ZUzcdnOBzvs61tj3GkWQKediFWYjzLtmw9cI" alt="Not found 404">
-<br>
-<div class="clock">
-    <span id="time" class="clock"></span>
-</div>
-<br><br>
-<div><p class="par">
-    Personal info: <br>
-    Name: Shin kun <br>
-    Job: Software Engineer, 2nd year <br>
-    University: Ostim Technical University <br>
-    Experience: C, C++, HTML & CSS <br>
-</p>
-</div>
+    <div class="nav-bar">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">About Me</a>
+            <a href="#">Contact</a>
+        </div>
+        <div id="time" class="clock"></div>
+    </div>
 
-<script>
-    function updateClock() {
-    const now = new Date(); 
-    const hours = String(now.getHours()).padStart(2, '0'); 
-    const minutes = String(now.getMinutes()).padStart(2, '0'); 
-    const seconds = String(now.getSeconds()).padStart(2, '0'); 
-    const timeString = `${hours}:${minutes}:${seconds}`; 
-    document.getElementById('time').textContent = timeString; 
-}
-    setInterval(updateClock, 1000); 
-    updateClock(); 
-</script>
+    <script>
+        function updateClock() {
+            const now = new Date(); 
+            const hours = String(now.getHours()).padStart(2, '0'); 
+            const minutes = String(now.getMinutes()).padStart(2, '0'); 
+            const seconds = String(now.getSeconds()).padStart(2, '0'); 
+            const timeString = `${hours}:${minutes}:${seconds}`; 
+            document.getElementById('time').textContent = timeString; 
+        }
+        setInterval(updateClock, 1000); 
+        updateClock(); 
+    </script>
 </body>
 </html>
